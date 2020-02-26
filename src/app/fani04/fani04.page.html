@@ -1,0 +1,11 @@
+<div>
+    <input #newName
+          (keyup.enter)="addName(newName.value)"
+          (blur)="addName(newName.value); newName.value='' ">
+    
+    <button (click)="addName(newName.value)">Add</button>
+    
+    <ul>
+        <li *ngFor="let name of namePerson">{{name}}</li>
+    </ul>
+</div>

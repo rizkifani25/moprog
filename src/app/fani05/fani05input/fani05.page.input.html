@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <a [routerLink]="['/fani05']" routerLinkActive="router-link-active"
+      >Array</a
+    >
+    ||
+    <a [routerLink]="['/fani05/input']" routerLinkActive="router-link-active"
+      >Input</a
+    >||
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+  </div>
+  <input
+    #newName
+    (keyup.enter)="addName(newName.value)"
+    (blur)="addName(newName.value); newName.value='' "
+  />
+
+  <button (click)="addName(newName.value)">Add</button>
+</div>
