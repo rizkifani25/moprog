@@ -40,6 +40,11 @@ const routes: Routes = [
       )
   },
   {
+    path: "fani06",
+    loadChildren: () =>
+      import("./fani06/fani06.module").then(m => m.Fani06PageModule)
+  },
+  {
     path: "fani07",
     loadChildren: () =>
       import("./fani07/fani07.module").then(m => m.Fani07PageModule)
