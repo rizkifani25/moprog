@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <a [routerLink]="['/fani09']" routerLinkActive="router-link-active"
+          >Back</a
+        >
+      </ion-buttons>
+      <ion-title>Fani09</ion-title>
+      <ion-buttons slot="end">
+        <a (click)="removeRecipeContent(recipeId)">Delete</a>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <img src="{{imageUrl}}" alt="" />
+        <ion-card-title>{{title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>Ingridients :</h1>
+        <ion-list>
+          <ion-item *ngFor="let i of ingredients">
+            <ion-label>{{i}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>

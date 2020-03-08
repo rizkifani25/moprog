@@ -60,6 +60,30 @@ const routes: Routes = [
       import("./fani08/detail/fani08.page.detail.module").then(
         m => m.Fani08PageModuleDetail
       )
+  },
+  {
+    path: "fani09",
+    loadChildren: () =>
+      import("./fani09/fani09.module").then(m => m.Fani09PageModule)
+  },
+  {
+    path: "fani09/details/:id",
+    loadChildren: () =>
+      import("./fani09/detail/fani09.page.detail.module").then(
+        m => m.Fani09PageModuleDetail
+      )
+  },
+  {
+    path: "fani10",
+    loadChildren: () =>
+      import("./fani10/fani10.module").then(m => m.Fani10PageModule)
+  },
+  {
+    path: "fani10/details/:id",
+    loadChildren: () =>
+      import("./fani10/detail/fani10.page.detail.module").then(
+        m => m.Fani10PageModuleDetail
+      )
   }
 ];
 
