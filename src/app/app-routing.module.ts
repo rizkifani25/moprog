@@ -84,6 +84,11 @@ const routes: Routes = [
       import("./fani10/detail/fani10.page.detail.module").then(
         m => m.Fani10PageModuleDetail
       )
+  },
+  {
+    path: "fani11",
+    loadChildren: () =>
+      import("./fani11/fani11.module").then(m => m.Fani11PageModule)
   }
 ];
 

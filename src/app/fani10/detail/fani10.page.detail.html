@@ -3,12 +3,13 @@
     <ion-toolbar color="dark">
       <ion-buttons slot="start">
         <a [routerLink]="['/fani10']" routerLinkActive="router-link-active"
-          >Back</a
-        >
+          ><ion-icon slot="icon-only" name="arrow-back" color="light"></ion-icon
+        ></a>
       </ion-buttons>
       <ion-title>Fani10</ion-title>
       <ion-buttons slot="end">
-        <a (click)="removeRecipe(recipeId)">Delete</a>
+        <!-- <a (click)="removeRecipe(recipeId)">Delete</a> -->
+        <a (click)="presentAlert(recipeId)">Delete</a>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>

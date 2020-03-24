@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Recipe } from "../fani10.recipes";
+import { AlertController } from "@ionic/angular";
 
 @Component({
   selector: "app-fani10",
@@ -13,7 +14,10 @@ export class Fani10PageDetail implements OnInit {
   title: string;
   ingredients = [];
 
-  constructor(private actRoute: ActivatedRoute) {}
+  constructor(
+    private actRoute: ActivatedRoute,
+    public alertController: AlertController
+  ) {}
 
   ngOnInit() {
     this.actRoute.paramMap.subscribe(params => {
@@ -43,5 +47,30 @@ export class Fani10PageDetail implements OnInit {
       return item.id;
     }).indexOf(recipeId);
     Recipe.splice(index, 1);
+  }
+
+  async presentAlert(recipeId: string) {
+    const alert = await this.alertController.create({
+      header: "Alert!",
+      message: "Are you sure?",
+      buttons: [
+        {
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: () => {
+            console.log("Delete canceled.");
+          }
+        },
+        {
+          text: "Delete",
+          handler: () => {
+            this.removeRecipe(recipeId);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
